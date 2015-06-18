@@ -25,8 +25,8 @@ def print_results(req, results):
     for result in results:
         if isinstance(result,dict):
             printable.append( 
-                "%s: %s" 
-                % (result['symbol'], result['LastTradePriceOnly'])
+				"%s: %s  %s(%s)" 
+                % (result['symbol'], result['LastTradePriceOnly'], result['Change'], result['ChangeinPercent'])
             )
             if result['ChangeinPercent'] : 
                 change_total += float(result['ChangeinPercent'].replace('%',''))
