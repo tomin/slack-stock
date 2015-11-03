@@ -31,7 +31,7 @@ def print_results(req, results):
             if result['ChangeinPercent'] : 
                 change_total += float(result['ChangeinPercent'].replace('%',''))
     status = 'rich' if change_total > 0 else 'poor'
-    congrats = "\nYou're gonna be %s, @%s" % (status, req.forms.get('user_name'))
+    congrats = ". You're gonna be %s, @%s" % (status, req.forms.get('user_name'))
     return "\n".join(printable) + congrats
 
 @bottle.route('/price/<ticker>', method='POST')
